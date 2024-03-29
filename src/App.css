@@ -1,7 +1,7 @@
 *{ 
   box-sizing: border-box; 
 }
- 
+
 .nav{ 
   display: flex; 
   justify-content: flex-start; 
@@ -17,4 +17,23 @@
 .nav img {
   width: 45px; 
   height: auto;
+}
+
+.spinner{
+  width: 24px;
+  animation: loading infinite 3s linear;
+}
+@keyframes loading{
+  from{
+    transform: rotateZ(0deg);
+  }
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+
+.peopleList{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
 }
