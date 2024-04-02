@@ -37,3 +37,17 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
 }
+
+.myImage{
+  width: 400px;
+}
+
+.personCard{
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  box-shadow: 0px 5px 5px 0px rgb(195, 195, 195);
+}

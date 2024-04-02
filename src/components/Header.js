@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function Header() {
   return (
     <header style={{
-        height: '480px',
+        height: '100px',
         overflow: 'hidden'
         }}>
         <nav className="nav">
