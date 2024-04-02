@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react"
+import { Link } from "react-router-dom"
 
 function People() {
     const [people,setPeople] = useState([])
@@ -55,9 +56,11 @@ function People() {
                 <section className="peopleList">
                     {people.map((person)=>(
                         <div className="personCard">
-                            <h1>{person.name}</h1>
-                            <img src={person.image} className="myImage"/>
-                            <p>{person.title}</p>
+                            <Link to={`/${person._id}`}> 
+                                <h1>{person.name}</h1>
+                                <img src={person.image} className="myImage"/>
+                                <p>{person.title}</p>
+                            </Link>
                         </div>
                     ))}
                 </section>
