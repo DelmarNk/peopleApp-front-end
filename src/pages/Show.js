@@ -1,12 +1,22 @@
 //first get the id from the URL with useParams
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useState,useEffect } from "react"
 
 function Show() {
     const {id} = useParams()
     const [person, setPerson] = useState(null)
     const URL = process.env.REACT_APP_API_URL + `/people/${id}`
-    console.log(URL)
+    const navigate = useNavigate()
+    function deletePerson(){
+        try{
+            fetch(URL, {
+                method: "DELETE"
+            })
+            navigate('/')
+        } catch(error){
+            console.log(error)
+        }
+    }
     function getPerson(){
         try{
             fetch(URL)
@@ -33,6 +43,7 @@ function Show() {
                 <h1>{person.name}</h1>
                 <p>{person.title}</p>
                 <img src={person.image}/>
+                <button onClick={deletePerson}>Remove Person</button>
             </div>
           )
     }
